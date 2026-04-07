@@ -16,10 +16,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under , so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Setup python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v6
         with:
           python-version: 3.13
       - name: Install Tox
@@ -37,10 +37,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under , so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Run hadolint for Suite starter
-        uses: hadolint/hadolint-action@master
+        uses: hadolint/hadolint-action@v3.3.0
         with:
           dockerfile: Dockerfile
 
@@ -52,10 +52,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under , so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Build Suite starter image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
